@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>About</title>
+  <title>Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,22 +10,22 @@
 
 <div class="navbar">
   <a href="home.html">Home</a>
-  <a href="about.html" class="active">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="admin.html">Admin</a>
+  <a href="admin.html" class="active">Admin</a>
   <a href="#" onclick="logout()">Logout</a>
 </div>
 
 <div class="content">
   <div class="login-box">
-    <h2>About Website</h2>
-    <p>This is a complete HTML, CSS & JavaScript project.</p>
+    <h2>All Messages</h2>
+    <button onclick="clearMessages()">Clear All</button>
+    <div id="adminMessages"></div>
   </div>
 </div>
 
 <script src="script.js"></script>
 <script>
   if (!localStorage.getItem("username")) location.href="index.html";
+  loadAdminMessages();
 </script>
 </body>
 </html>

@@ -8,29 +8,25 @@
 </head>
 <body>
 
-  <div class="navbar">
-    <a href="home.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="index.html">Logout</a>
+<div class="navbar">
+  <a href="home.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="admin.html">Admin</a>
+  <a href="#" onclick="logout()">Logout</a>
+</div>
+
+<div class="content">
+  <div class="login-box">
+    <h1 id="welcome"></h1>
   </div>
+</div>
 
-  <div class="content">
-    <div class="login-box">
-      <h1>Welcome 🎉</h1>
-      <p>Login successful</p>
-
-      <div class="card">
-        <h3>About Website</h3>
-        <p>This website is created using HTML, CSS and JavaScript.</p>
-      </div>
-
-      <div class="card">
-        <h3>Features</h3>
-        <p>Login system, multiple pages, contact form, responsive design.</p>
-      </div>
-    </div>
-  </div>
-
+<script src="script.js"></script>
+<script>
+  if (!localStorage.getItem("username")) location.href="index.html";
+  document.getElementById("welcome").innerText =
+    "Welcome, " + localStorage.getItem("username") + " 👋";
+</script>
 </body>
 </html>

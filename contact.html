@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Contact</title>
@@ -8,26 +8,36 @@
 </head>
 <body>
 
-  <div class="navbar">
-    <a href="home.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="index.html">Logout</a>
+<div class="navbar">
+  <a href="home.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="admin.html">Admin</a>
+  <a href="#" onclick="logout()">Logout</a>
+</div>
+
+<div class="content">
+  <div class="contact-box">
+    <h2>Contact</h2>
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <textarea id="message" placeholder="Message"></textarea>
+    <button onclick="send()">Send</button>
+    <p id="status"></p>
   </div>
+</div>
 
-  <div class="content">
-    <div class="contact-box">
-      <h2>Contact Us</h2>
-
-      <input type="text" id="name" placeholder="Your Name">
-      <input type="email" id="email" placeholder="Your Email">
-      <textarea id="message" placeholder="Your Message"></textarea>
-
-      <button onclick="send()">Send</button>
-      <p id="status"></p>
-    </div>
+<div class="content">
+  <div class="login-box">
+    <h2>Saved Messages</h2>
+    <div id="messages"></div>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+<script>
+  if (!localStorage.getItem("username")) location.href="index.html";
+  loadMessages();
+</script>
 </body>
 </html>
